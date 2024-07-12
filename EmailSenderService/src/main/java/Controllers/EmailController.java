@@ -39,7 +39,7 @@ public class EmailController {
         return ResponseEntity.ok (CustomResponse.builder().message ("Email sent successfully !!").status (HttpStatus.OK).success (true).build ());
     }
 
-    @PostMapping ("/send/html/context")
+    @PostMapping ("/send/file/context")
     public ResponseEntity<CustomResponse> sendEmailWithFile(String to, String subject, String message, File file) {
         emailService.sendEmailWithFile (to, subject, message, file);
         return ResponseEntity.ok (CustomResponse.builder().message ("Email sent successfully !!").status (HttpStatus.OK).success (true).build ());
